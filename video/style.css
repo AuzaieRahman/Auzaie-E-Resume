@@ -1,0 +1,74 @@
+body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #333333 ; /* light green background */
+        }
+
+        header {
+            background-color: #FF6347 ; /* darker green top bar */
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        /* Center the site logo across pages */
+        header .site-logo {
+            display: block;
+            margin: 0 auto;
+            width: 110px;
+            height: auto;
+        }
+
+        nav {
+            background-color: #1E90FF ; /* grey navigation bar */
+            padding: 10px 0;
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: white;
+            margin: 0 15px;
+            font-weight: bold;
+            font-family: Arial, sans-serif;
+        }
+
+        nav a:hover {
+            color: #000;
+        }
+
+        .container {
+            text-align: center;
+            padding: 30px 20px;
+        }
+
+        .container h1 {
+            color: white;
+            margin-bottom: 10px;
+        }
+
+        .container p {
+            color: white;
+            max-width: 700px;
+            margin: 0 auto 20px auto;
+        }
+
+        /* Quote style on homepage */
+        .container .quote {
+            font-size: 20px; /* change this value to adjust quote size */
+            line-height: 1.5;
+            color: #ffffff;
+        }
+
+        .container img {
+            width: 200px;
+            border-radius: 5px;
+        }
+
+        footer {
+            background-color: #FF6347 ; /* grey footer */
+            padding: 10px 0;
+            text-align: center;
+            color: white;
+            margin-top: 20px;
+        }
