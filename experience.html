@@ -1,0 +1,913 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Experience - E-Resume | Auzaie Rusydi Bin Abdul Rahman</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(to bottom, #333333 0%, #2a2a2a 100%);
+            line-height: 1.6;
+            color: #333;
+        }
+
+        /* Header & Navigation */
+        header {
+            background: linear-gradient(135deg, #ff6347 0%, #ff7657 100%);
+            text-align: center;
+            padding: 28px 15px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        header img {
+            width: 110px;
+            height: auto;
+            transition: all 0.3s ease;
+            filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+        }
+
+        header img:hover {
+            transform: scale(1.08);
+            filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+        }
+
+        nav {
+            background: linear-gradient(135deg, #1e90ff 0%, #1a7fd1 100%);
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            position: sticky;
+            top: 100px;
+            z-index: 99;
+            gap: 0;
+            border-bottom: 4px solid #ff6347;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 16px 28px;
+            margin: 0;
+            border-radius: 0;
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            font-size: 16px;
+            position: relative;
+            overflow: hidden;
+            border-bottom: 4px solid transparent;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        nav a::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 100%;
+            background: rgba(255, 99, 71, 0.2);
+            transition: width 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            z-index: -1;
+        }
+
+        nav a:hover::before {
+            width: 100%;
+        }
+
+        nav a:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            letter-spacing: 0.8px;
+        }
+
+        nav a:active {
+            transform: translateY(0);
+        }
+
+        nav a.active {
+            background: rgba(255, 255, 255, 0.15);
+            border-bottom-color: #ff6347;
+            box-shadow: inset 0 -4px 0 #ff6347, 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        nav a.active:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        /* Main Content */
+        main {
+            padding: 40px 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            font-size: 48px;
+            color: #ffffff;
+            text-align: center;
+            margin-bottom: 50px;
+            font-weight: 700;
+        }
+
+        .timeline {
+            position: relative;
+            padding-left: 50px;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 15px;
+            top: 0;
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(to bottom, #1e90ff, #ff6347);
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(30, 144, 255, 0.3);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 50px;
+            padding: 25px;
+            background: #D3D3D3;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            border-left: 4px solid #1e90ff;
+        }
+
+        .timeline-item:hover {
+            transform: translateX(10px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            border-left-color: #ff6347;
+        }
+
+        .timeline-item::before {
+            content: '★';
+            position: absolute;
+            left: -40px;
+            top: 20px;
+            background: #ff6347;
+            color: white;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 36px;
+            font-size: 18px;
+            box-shadow: 0 0 0 6px #D3D3D3;
+            border: 2px solid #333333;
+        }
+
+        .timeline-item h3 {
+            margin: 0 0 8px 0;
+            color: #333333;
+            font-size: 24px;
+            font-weight: 600;
+        }
+
+        .timeline-item span {
+            font-size: 14px;
+            color: #666;
+            font-style: italic;
+            font-weight: 500;
+            display: block;
+            margin-bottom: 12px;
+        }
+
+        .timeline-item p {
+            margin: 12px 0;
+            line-height: 1.8;
+            color: #333333;
+            font-size: 15px;
+        }
+
+        .timeline-item img {
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+            transition: all 0.3s ease;
+            max-width: 100%;
+            margin: 15px 0;
+            cursor: pointer;
+        }
+
+        .timeline-item img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 25px rgba(30, 144, 255, 0.3);
+        }
+
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.95);
+            animation: fadeIn 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .modal-content {
+            margin: auto;
+            display: block;
+            max-width: 90%;
+            max-height: 90vh;
+            padding: 50px 20px;
+            animation: zoomIn 0.3s ease;
+        }
+
+        @keyframes zoomIn {
+            from { transform: scale(0.8); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+
+        .close {
+            position: fixed;
+            top: 30px;
+            right: 40px;
+            color: white;
+            font-size: 36px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: color 0.3s ease;
+            z-index: 1001;
+        }
+
+        .close:hover {
+            color: #1e90ff;
+        }
+
+        /* Experience Stats */
+        .experience-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 50px;
+        }
+
+        .stat-card {
+            background: linear-gradient(135deg, #1e90ff 0%, #0066cc 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 8px 16px rgba(30, 144, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .stat-card:nth-child(2) {
+            background: linear-gradient(135deg, #ff6347 0%, #e53e2a 100%);
+            box-shadow: 0 8px 16px rgba(255, 99, 71, 0.2);
+        }
+
+        .stat-card:nth-child(3) {
+            background: linear-gradient(135deg, #32cd32 0%, #228b22 100%);
+            box-shadow: 0 8px 16px rgba(50, 205, 50, 0.2);
+        }
+
+        .stat-card:nth-child(4) {
+            background: linear-gradient(135deg, #ffa500 0%, #ff8c00 100%);
+            box-shadow: 0 8px 16px rgba(255, 165, 0, 0.2);
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .stat-value {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .stat-label {
+            font-size: 14px;
+            font-weight: 500;
+            opacity: 0.95;
+        }
+
+        /* Experience Overview */
+        .experience-overview {
+            background: #D3D3D3;
+            padding: 35px;
+            border-radius: 12px;
+            margin-bottom: 50px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+            border-left: 4px solid #1e90ff;
+        }
+
+        .experience-overview h2 {
+            color: #1e90ff;
+            font-size: 24px;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .experience-overview p {
+            color: #555;
+            font-size: 15px;
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+
+        /* Category Tags */
+        .category-tags {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .category-tag {
+            background: linear-gradient(135deg, #1e90ff 0%, #0066cc 100%);
+            color: white;
+            padding: 8px 14px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .category-tag:nth-child(2n) {
+            background: linear-gradient(135deg, #ff6347 0%, #e53e2a 100%);
+        }
+
+        .category-tag:nth-child(3n) {
+            background: linear-gradient(135deg, #32cd32 0%, #228b22 100%);
+        }
+
+        .category-tag:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Impact Metrics */
+        .impact-section {
+            background: #D3D3D3;
+            padding: 35px;
+            border-radius: 12px;
+            margin-bottom: 50px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+        }
+
+        .impact-section h2 {
+            color: #ff6347;
+            font-size: 24px;
+            margin-bottom: 25px;
+            font-weight: 600;
+            text-align: center;
+        }
+
+        .impact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .impact-item {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            border-top: 4px solid #1e90ff;
+            transition: all 0.3s ease;
+        }
+
+        .impact-item:nth-child(2) {
+            border-top-color: #ff6347;
+        }
+
+        .impact-item:nth-child(3) {
+            border-top-color: #32cd32;
+        }
+
+        .impact-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        }
+
+        .impact-icon {
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+
+        .impact-title {
+            font-size: 16px;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 8px;
+        }
+
+        .impact-description {
+            font-size: 13px;
+            color: #666;
+            line-height: 1.5;
+        }
+
+        /* Enhanced Timeline */
+        .timeline {
+            position: relative;
+            padding-left: 50px;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 15px;
+            top: 0;
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(to bottom, #1e90ff, #ff6347);
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(30, 144, 255, 0.3);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 50px;
+            padding: 30px;
+            background: #D3D3D3;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            border-left: 4px solid #1e90ff;
+        }
+
+        .timeline-item:hover {
+            transform: translateX(10px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            border-left-color: #ff6347;
+        }
+
+        .timeline-item::before {
+            content: '★';
+            position: absolute;
+            left: -40px;
+            top: 20px;
+            background: #ff6347;
+            color: white;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 36px;
+            font-size: 18px;
+            box-shadow: 0 0 0 6px #D3D3D3;
+            border: 2px solid #333333;
+            transition: all 0.3s ease;
+        }
+
+        .timeline-item:hover::before {
+            background: #1e90ff;
+            transform: scale(1.15);
+        }
+
+        .timeline-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            margin-bottom: 15px;
+            flex-wrap: wrap;
+        }
+
+        .timeline-item h3 {
+            margin: 0;
+            color: #333333;
+            font-size: 24px;
+            font-weight: 600;
+        }
+
+        .timeline-badge {
+            background: linear-gradient(135deg, #1e90ff 0%, #0066cc 100%);
+            color: white;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .timeline-item span {
+            font-size: 14px;
+            color: #666;
+            font-style: italic;
+            font-weight: 500;
+            display: block;
+            margin: 8px 0 12px 0;
+        }
+
+        .timeline-item p {
+            margin: 12px 0;
+            line-height: 1.8;
+            color: #555;
+            font-size: 15px;
+        }
+
+        .timeline-highlights {
+            background: rgba(30, 144, 255, 0.05);
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+            border-left: 3px solid #1e90ff;
+        }
+
+        .timeline-highlights h4 {
+            color: #1e90ff;
+            font-size: 13px;
+            font-weight: 600;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+
+        .timeline-highlights ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .timeline-highlights li {
+            color: #555;
+            font-size: 14px;
+            padding: 5px 0;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .timeline-highlights li:before {
+            content: "→ ";
+            position: absolute;
+            left: 0;
+            color: #1e90ff;
+            font-weight: bold;
+        }
+
+        .timeline-item img {
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+            transition: all 0.3s ease;
+            max-width: 100%;
+            margin: 15px 0;
+            cursor: pointer;
+        }
+
+        .timeline-item img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 25px rgba(30, 144, 255, 0.3);
+        }
+
+        /* Navigation Buttons Section */
+        .navigation-buttons {
+            background: linear-gradient(135deg, #1e90ff 0%, #ff6347 100%);
+            padding: 40px;
+            border-radius: 12px;
+            margin: 60px 0;
+            box-shadow: 0 8px 16px rgba(30, 144, 255, 0.2);
+        }
+
+        .navigation-buttons h3 {
+            color: white;
+            font-size: 22px;
+            text-align: center;
+            margin-bottom: 25px;
+            font-weight: 600;
+        }
+
+        .buttons-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+        }
+
+        .nav-button {
+            background: white;
+            color: #1e90ff;
+            padding: 15px 20px;
+            border: none;
+            border-radius: 8px;
+            text-decoration: none;
+            text-align: center;
+            font-weight: 600;
+            font-size: 15px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: inline-block;
+        }
+
+        .nav-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+            background: #f0f0f0;
+        }
+
+        .nav-button:active {
+            transform: translateY(-1px);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #ff6347;
+            text-align: center;
+            padding: 20px;
+            color: white;
+            margin-top: 60px;
+            font-weight: 500;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 36px;
+            }
+
+            .experience-stats {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .timeline {
+                padding-left: 30px;
+            }
+
+            .timeline-item::before {
+                left: -25px;
+                width: 28px;
+                height: 28px;
+                line-height: 28px;
+            }
+
+            .timeline-header {
+                flex-direction: column;
+            }
+
+            .timeline-badge {
+                margin-top: 10px;
+                align-self: flex-start;
+            }
+
+            .impact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .experience-overview,
+            .impact-section {
+                padding: 20px 15px;
+            }
+
+            nav {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            nav a {
+                margin: 5px 0;
+                width: 90%;
+                text-align: center;
+            }
+
+            .buttons-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .nav-button {
+                padding: 12px 15px;
+                font-size: 14px;
+            }
+
+            .navigation-buttons {
+                margin: 40px 0;
+                padding: 30px 15px;
+            }
+
+            .navigation-buttons h3 {
+                font-size: 18px;
+                margin-bottom: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <img src="picture/Logo Auzaie.png" alt="Logo - Auzaie">
+    </header>
+
+    <nav>
+        <a href="index.html">HOME</a>
+        <a href="about.html">ABOUT</a>
+        <a href="education.html">EDUCATION</a>
+        <a href="skills.html">SKILLS</a>
+        <a href="experience.html" class="active">EXPERIENCE</a>
+        <a href="contact.html">CONTACT</a>
+    </nav>
+
+    <main>
+        <h1>✨ My Experience</h1>
+
+        <!-- Experience Statistics -->
+        <div class="experience-stats">
+            <div class="stat-card">
+                <div class="stat-value">3</div>
+                <div class="stat-label">Major Projects</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value">2+</div>
+                <div class="stat-label">Years Active</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value">100%</div>
+                <div class="stat-label">Project Success</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value">5+</div>
+                <div class="stat-label">Skills Developed</div>
+            </div>
+        </div>
+
+        <!-- Experience Overview -->
+        <div class="experience-overview">
+            <h2>📊 Professional Journey</h2>
+            <p>
+                My professional experience spans across web design, multimedia development, and IT support roles. 
+                Each project has reinforced my technical skills, problem-solving abilities, and commitment to delivering quality work.
+            </p>
+            <p>
+                With a strong foundation in both technical and creative domains, I've successfully contributed to projects 
+                that combine functionality with user experience, demonstrating adaptability and continuous learning.
+            </p>
+            <div class="category-tags">
+                <span class="category-tag">Web Development</span>
+                <span class="category-tag">Design</span>
+                <span class="category-tag">IT Support</span>
+                <span class="category-tag">Project Management</span>
+            </div>
+        </div>
+
+        <!-- Impact Metrics -->
+        <div class="impact-section">
+            <h2>🎯 Key Achievements & Impact</h2>
+            <div class="impact-grid">
+                <div class="impact-item">
+                    <div class="impact-icon">🚀</div>
+                    <div class="impact-title">Projects Completed</div>
+                    <div class="impact-description">Successfully delivered 3 major projects with positive outcomes and client satisfaction.</div>
+                </div>
+                <div class="impact-item">
+                    <div class="impact-icon">💡</div>
+                    <div class="impact-title">Technical Solutions</div>
+                    <div class="impact-description">Implemented innovative solutions addressing real-world technical challenges and requirements.</div>
+                </div>
+                <div class="impact-item">
+                    <div class="impact-icon">📈</div>
+                    <div class="impact-title">Skills Growth</div>
+                    <div class="impact-description">Continuously developed expertise in design, development, and technical support domains.</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Enhanced Timeline -->
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-header">
+                    <h3>🌐 Web Design Project</h3>
+                    <span class="timeline-badge">Current</span>
+                </div>
+                <span>2024 – Present</span>
+                <p>
+                    Building a modern and responsive personal portfolio website using HTML and CSS with modern design principles.
+                    Focus on clean layouts, optimal color harmony, and ensuring exceptional user experience across all devices.
+                </p>
+                <div class="timeline-highlights">
+                    <h4>Key Responsibilities</h4>
+                    <ul>
+                        <li>Designed and developed responsive web pages</li>
+                        <li>Implemented modern CSS styling and animations</li>
+                        <li>Ensured cross-browser compatibility</li>
+                        <li>Optimized user interface for accessibility</li>
+                    </ul>
+                </div>
+                <img src="picture/web design sijil.png" alt="Web Design Certificate" style="max-width: 280px;" onclick="openModal('picture/web design sijil.png')">
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-header">
+                    <h3>🎨 Multimedia Presentation Creator</h3>
+                    <span class="timeline-badge">2023</span>
+                </div>
+                <span>2023</span>
+                <p>
+                    Designed interactive and engaging presentations using Canva, integrating visual elements, animations, 
+                    and compelling storytelling techniques to create impactful multimedia content.
+                </p>
+                <div class="timeline-highlights">
+                    <h4>Key Responsibilities</h4>
+                    <ul>
+                        <li>Created visually appealing presentation slides</li>
+                        <li>Integrated animations and transitions</li>
+                        <li>Applied storytelling principles</li>
+                        <li>Delivered professional multimedia content</li>
+                    </ul>
+                </div>
+                <img src="picture/Multimedia Creator.png" alt="Multimedia Creator Certificate" style="max-width: 300px;" onclick="openModal('picture/Multimedia Creator.png')">
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-header">
+                    <h3>💻 IT Support Assistant Internship</h3>
+                    <span class="timeline-badge">2023</span>
+                </div>
+                <span>2023</span>
+                <p>
+                    Provided technical support by troubleshooting hardware and software issues, assisting end-users, 
+                    and maintaining IT systems. Gained valuable experience in customer service, technical communication, and problem resolution.
+                </p>
+                <div class="timeline-highlights">
+                    <h4>Key Responsibilities</h4>
+                    <ul>
+                        <li>Diagnosed and resolved hardware/software issues</li>
+                        <li>Provided customer technical support</li>
+                        <li>Maintained IT documentation</li>
+                        <li>Performed system troubleshooting</li>
+                    </ul>
+                </div>
+                <img src="picture/IT intern.png" alt="IT Support Certificate" style="max-width: 300px;" onclick="openModal('picture/IT intern.png')">
+            </div>
+        </div>
+
+        <!-- Navigation Buttons -->
+        <div class="navigation-buttons">
+            <h3>🔗 Quick Navigation</h3>
+            <div class="buttons-grid">
+                <a href="index.html" class="nav-button">🏠 Home</a>
+                <a href="about.html" class="nav-button">👤 About Me</a>
+                <a href="education.html" class="nav-button">🎓 Education</a>
+                <a href="skills.html" class="nav-button">💼 Skills</a>
+                <a href="experience.html" class="nav-button">✨ Experience</a>
+                <a href="contact.html" class="nav-button">📧 Contact</a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        © 2025 Auzaie Rusydi Bin Abdul Rahman. All Rights Reserved.
+    </footer>
+
+    <!-- Modal -->
+    <div id="imageModal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img class="modal-content" id="modalImage" alt="Experience Image">
+    </div>
+
+    <script>
+        function openModal(imagePath) {
+            const modal = document.getElementById("imageModal");
+            const modalImg = document.getElementById("modalImage");
+            modalImg.src = imagePath;
+            modal.style.display = "block";
+        }
+
+        function closeModal() {
+            const modal = document.getElementById("imageModal");
+            modal.style.display = "none";
+        }
+
+        window.onclick = function(event) {
+            const modal = document.getElementById("imageModal");
+            if (event.target === modal) {
+                modal.style.display = "none";
+            }
+        }
+
+        // Close modal with Escape key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeModal();
+            }
+        });
+    </script>
+</body>
+</html>

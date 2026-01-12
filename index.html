@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - E-Resume | Auzaie Rusydi Bin Abdul Rahman</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <img src="picture/Logo Auzaie.png" alt="Logo - Auzaie">
+    </header>
+
+    <nav>
+        <a href="index.html" class="active">HOME</a>
+        <a href="about.html">ABOUT</a>
+        <a href="education.html">EDUCATION</a>
+        <a href="skills.html">SKILLS</a>
+        <a href="experience.html">EXPERIENCE</a>
+        <a href="contact.html">CONTACT</a>
+    </nav>
+
+    <main>
+        <!-- Hero Section -->
+        <div class="hero">
+            <div class="hero-content">
+                <h1>💼 Welcome to My Professional E-Resume</h1>
+                <div class="hero-subtitle">Problem Solver | Fast Learner | Tech Enthusiast</div>
+                <p>
+                    I am Auzaie Rusydi Bin Abdul Rahman, an ambitious Information System Management student 
+                    with a passion for technology, innovation, and continuous learning. Dedicated to applying 
+                    my skills in real-world environments and making meaningful contributions.
+                </p>
+                <div class="cta-buttons">
+                    <a href="about.html" class="btn btn-primary">Learn More About Me</a>
+                    <a href="contact.html" class="btn btn-secondary">Get In Touch</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Stats Section -->
+        <div class="stats">
+            <div class="stat-item">
+                <div class="stat-number">7+</div>
+                <div class="stat-label">Technical Skills</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">10+</div>
+                <div class="stat-label">Projects Completed</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">3</div>
+                <div class="stat-label">Languages</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">100%</div>
+                <div class="stat-label">Dedication</div>
+            </div>
+        </div>
+
+        <!-- Features Section -->
+        <div class="features">
+            <div class="feature-card">
+                <div class="feature-icon">🎓</div>
+                <h3>Well-Educated</h3>
+                <p>Pursuing Information System Management at UiTM Puncak Perdana with strong academic foundation.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🚀</div>
+                <h3>Innovative Thinker</h3>
+                <p>Creative problem-solving with focus on digital transformation and technology solutions.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">👥</div>
+                <h3>Team Player</h3>
+                <p>Strong communication and collaboration skills with proven project management experience.</p>
+            </div>
+        </div>
+
+        <!-- Profile Section -->
+        <div class="profile-section">
+            <div class="profile-text">
+                <h2>About Me</h2>
+                <p>
+                    I am a dedicated student and future professional in Information System Management. 
+                    My journey has been defined by curiosity, resilience, and a commitment to excellence 
+                    in everything I undertake.
+                </p>
+                <p>
+                    With expertise in technical skills, project management, and data analysis, I bring a 
+                    solutions-oriented mindset to every challenge. I'm passionate about leveraging technology 
+                    to drive organizational success and create positive impact.
+                </p>
+                <a href="about.html" class="btn btn-primary">Discover My Journey</a>
+            </div>
+            <div class="profile-image">
+                <video class="profile-video" autoplay muted loop controls>
+                    <source src="video/WIN_20260112_17_36_08_Pro.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <div class="video-label">▶ AUZAIE RUSYDI ABDUL RAHMAN</div>
+            </div>
+        </div>
+
+        <!-- Navigation Buttons -->
+        <div class="navigation-buttons">
+            <h3>🔗 Quick Navigation</h3>
+            <div class="buttons-grid">
+                <a href="index.html" class="nav-button">🏠 Home</a>
+                <a href="about.html" class="nav-button">👤 About Me</a>
+                <a href="education.html" class="nav-button">🎓 Education</a>
+                <a href="skills.html" class="nav-button">💼 Skills</a>
+                <a href="experience.html" class="nav-button">✨ Experience</a>
+                <a href="contact.html" class="nav-button">📧 Contact</a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        © 2025 Auzaie Rusydi Bin Abdul Rahman. All Rights Reserved.
+    </footer>
+
+    <script>
+        function openModal(imagePath) {
+            const modal = document.getElementById("imageModal");
+            const modalImg = document.getElementById("modalImage");
+            modalImg.src = imagePath;
+            modal.style.display = "block";
+        }
+
+        function closeModal() {
+            const modal = document.getElementById("imageModal");
+            modal.style.display = "none";
+        }
+
+        window.onclick = function(event) {
+            const modal = document.getElementById("imageModal");
+            if (event.target === modal) {
+                modal.style.display = "none";
+            }
+        };
+
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeModal();
+            }
+        });
+    </script>
+

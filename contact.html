@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - E-Resume | Auzaie Rusydi Bin Abdul Rahman</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(to bottom, #333333 0%, #2a2a2a 100%);
+            line-height: 1.6;
+            color: #333;
+        }
+
+        /* Header & Navigation */
+        header {
+            background: linear-gradient(135deg, #ff6347 0%, #ff7657 100%);
+            text-align: center;
+            padding: 28px 15px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        header img {
+            width: 110px;
+            height: auto;
+            transition: all 0.3s ease;
+            filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+        }
+
+        header img:hover {
+            transform: scale(1.08);
+            filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+        }
+
+        nav {
+            background: linear-gradient(135deg, #1e90ff 0%, #1a7fd1 100%);
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            position: sticky;
+            top: 100px;
+            z-index: 99;
+            gap: 0;
+            border-bottom: 4px solid #ff6347;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 16px 28px;
+            margin: 0;
+            border-radius: 0;
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            font-size: 16px;
+            position: relative;
+            overflow: hidden;
+            border-bottom: 4px solid transparent;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        nav a::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 100%;
+            background: rgba(255, 99, 71, 0.2);
+            transition: width 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            z-index: -1;
+        }
+
+        nav a:hover::before {
+            width: 100%;
+        }
+
+        nav a:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            letter-spacing: 0.8px;
+        }
+
+        nav a:active {
+            transform: translateY(0);
+        }
+
+        nav a.active {
+            background: rgba(255, 255, 255, 0.15);
+            border-bottom-color: #ff6347;
+            box-shadow: inset 0 -4px 0 #ff6347, 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        nav a.active:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        /* Main Content */
+        main {
+            padding: 40px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            font-size: 48px;
+            color: #ffffff;
+            text-align: center;
+            margin-bottom: 50px;
+            font-weight: 700;
+        }
+
+        .contact-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            align-items: start;
+        }
+
+        /* Contact Form */
+        .contact-form-box {
+            background: #D3D3D3;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+            border-left: 4px solid #1e90ff;
+            transition: all 0.3s ease;
+        }
+
+        .contact-form-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 24px rgba(30, 144, 255, 0.2);
+        }
+
+        .contact-form-box h2 {
+            text-align: center;
+            font-size: 32px;
+            color: #333333;
+            margin-bottom: 30px;
+            font-weight: 600;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #333333;
+            font-size: 15px;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #1e90ff;
+            border-radius: 6px;
+            font-family: 'Segoe UI', sans-serif;
+            font-size: 14px;
+            box-sizing: border-box;
+            transition: all 0.3s ease;
+        }
+
+        input:focus, textarea:focus {
+            outline: none;
+            border: 2px solid #ff6347;
+            background-color: #f9f9f9;
+            box-shadow: 0 0 8px rgba(255, 99, 71, 0.2);
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 150px;
+        }
+
+        button {
+            width: 100%;
+            padding: 14px;
+            background: #1e90ff;
+            color: white;
+            font-size: 16px;
+            font-weight: 600;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        button:hover {
+            background: #0066cc;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(30, 144, 255, 0.3);
+        }
+
+        /* Contact Information */
+        .contact-info-box {
+            background: #D3D3D3;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+            border-left: 4px solid #ff6347;
+            transition: all 0.3s ease;
+        }
+
+        .contact-info-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 24px rgba(255, 99, 71, 0.2);
+        }
+
+        .contact-info-box h2 {
+            text-align: center;
+            font-size: 32px;
+            color: #333333;
+            margin-bottom: 30px;
+            font-weight: 600;
+        }
+
+        .contact-item {
+            margin-bottom: 25px;
+            text-align: center;
+            padding: 15px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .contact-item:hover {
+            background: #f0f0f0;
+            transform: translateY(-2px);
+        }
+
+        .contact-item h3 {
+            font-size: 18px;
+            font-weight: 600;
+            color: #1e90ff;
+            margin: 0 0 10px 0;
+        }
+
+        .contact-item p {
+            font-size: 15px;
+            color: #333333;
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        .contact-item a {
+            color: #ff6347;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-weight: 600;
+        }
+
+        .contact-item a:hover {
+            color: #1e90ff;
+            text-decoration: underline;
+        }
+
+        /* Navigation Buttons Section */
+        .navigation-buttons {
+            background: linear-gradient(135deg, #1e90ff 0%, #ff6347 100%);
+            padding: 40px;
+            border-radius: 12px;
+            margin: 60px 0;
+            box-shadow: 0 8px 16px rgba(30, 144, 255, 0.2);
+        }
+
+        .navigation-buttons h3 {
+            color: white;
+            font-size: 22px;
+            text-align: center;
+            margin-bottom: 25px;
+            font-weight: 600;
+        }
+
+        .buttons-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+        }
+
+        .nav-button {
+            background: white;
+            color: #1e90ff;
+            padding: 15px 20px;
+            border: none;
+            border-radius: 8px;
+            text-decoration: none;
+            text-align: center;
+            font-weight: 600;
+            font-size: 15px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: inline-block;
+        }
+
+        .nav-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+            background: #f0f0f0;
+        }
+
+        .nav-button:active {
+            transform: translateY(-1px);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #ff6347;
+            text-align: center;
+            padding: 20px;
+            color: white;
+            margin-top: 60px;
+            font-weight: 500;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .contact-section {
+                grid-template-columns: 1fr;
+            }
+
+            h1 {
+                font-size: 36px;
+            }
+
+            main {
+                padding: 20px 15px;
+            }
+
+            nav {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            nav a {
+                margin: 5px 0;
+                width: 90%;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <img src="picture/Logo Auzaie.png" alt="Logo - Auzaie">
+    </header>
+
+    <nav>
+        <a href="index.html">HOME</a>
+        <a href="about.html">ABOUT</a>
+        <a href="education.html">EDUCATION</a>
+        <a href="skills.html">SKILLS</a>
+        <a href="experience.html">EXPERIENCE</a>
+        <a href="contact.html" class="active">CONTACT</a>
+    </nav>
+
+    <main>
+        <h1>📞 Get In Touch</h1>
+
+        <div class="contact-section">
+            <!-- Contact Form -->
+            <div class="contact-form-box">
+                <h2>Send Message</h2>
+                <form action="#" method="post">
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" placeholder="Enter your email address" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <input type="text" id="subject" name="subject" placeholder="What is this about?" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" placeholder="Type your message here..." required></textarea>
+                    </div>
+
+                    <button type="submit">Send Message</button>
+                </form>
+            </div>
+
+            <!-- Contact Information -->
+            <div class="contact-info-box">
+                <h2>Contact Information</h2>
+
+                <div class="contact-item">
+                    <h3>📱 Phone</h3>
+                    <p>(+601) 019-481-2972</p>
+                </div>
+
+                <div class="contact-item">
+                    <h3>📧 Email</h3>
+                    <p><a href="mailto:auzaierusydi2004@yahoo.com">auzaierusydi2004@yahoo.com</a></p>
+                </div>
+
+                <div class="contact-item">
+                    <h3>📍 Location</h3>
+                    <p>Putrajaya, Malaysia</p>
+                </div>
+
+                <div class="contact-item">
+                    <h3>🕐 Response Time</h3>
+                    <p>I typically respond within 24 hours</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Navigation Buttons -->
+        <div class="navigation-buttons">
+            <h3>🔗 Quick Navigation</h3>
+            <div class="buttons-grid">
+                <a href="index.html" class="nav-button">🏠 Home</a>
+                <a href="about.html" class="nav-button">👤 About Me</a>
+                <a href="education.html" class="nav-button">🎓 Education</a>
+                <a href="skills.html" class="nav-button">💼 Skills</a>
+                <a href="experience.html" class="nav-button">✨ Experience</a>
+                <a href="contact.html" class="nav-button">📧 Contact</a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        © 2025 Auzaie Rusydi Bin Abdul Rahman. All Rights Reserved.
+    </footer>
+</body>
+</html>
